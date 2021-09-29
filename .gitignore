@@ -1,0 +1,24 @@
+# Folders 
+learn/
+
+# Datasets 
+*.json
+*.csv
+*.xml 
+*.pdf 
+*.tgz
+*.gz 
+*.tar 
+
+# Python compiled files 
+*.py[co]
+__pycache__
+.ipynb_checkpoints 
+
+# IDE stuff 
+*.code-workspace
+.history
+.vscode
+
+# Credentials 
+.env 
