@@ -1,0 +1,4 @@
+json
+psycopg2
+alive_bar
+python-dotenv
