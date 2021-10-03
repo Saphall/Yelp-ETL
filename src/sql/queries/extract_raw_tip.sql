@@ -1,2 +1,2 @@
-Insert into raw_tip
-values (%s, %s, %s, %s, %s);
+INSERT INTO raw_tip
+VALUES (%s, %s, %s, %s, %s);

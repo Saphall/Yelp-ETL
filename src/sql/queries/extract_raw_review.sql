@@ -1,2 +1,2 @@
-Insert into raw_review
-values (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+INSERT INTO raw_review
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);

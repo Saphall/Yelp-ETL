@@ -1,2 +1,2 @@
-Insert into raw_photos
-values (%s, %s, %s, %s);
+INSERT INTO raw_photos
+VALUES (%s, %s, %s, %s);
