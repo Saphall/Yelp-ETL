@@ -7,6 +7,9 @@ load_dotenv()
 
 
 def databaseConnect():
+    """
+    This function helps to connect to postgresql database.
+    """
     try:
         return psycopg2.connect(
             user=os.environ.get('DATABASE_USER'),
@@ -20,6 +23,9 @@ def databaseConnect():
 
 
 def databaseDisconnect(connection, cursor):
+    """
+    This function helps to disconnect from database.
+    """
     try:
         connection.close()
         cursor.close()
