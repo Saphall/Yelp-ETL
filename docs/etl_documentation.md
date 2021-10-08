@@ -2,9 +2,9 @@
 
 
 ## 1. [database_connection.py](../src/pipeline/utils/database_connection.py)  file:  
-This module helps us to connect to Postgresql Database as well as disconnect from the database easiy.
+This module helps us to connect to Postgresql Database as well as disconnect from the database easily.
 
-* a. The `databaseConnect()` function helps us to connect to database taking user,password,host,port and database variables from environment variable.
+* a. The `databaseConnect()` function helps us to connect to database taking user,password,host,port and database variables from environment variable i.e. `.env` file.
 ```
 def databaseConnect():
     """
@@ -78,7 +78,7 @@ These are the characters used while printing statements in console in colorful f
 The first process in ETL is Extraction.
 
 Here we extract data from `.json` to raw_tables.
-There are six `.json` files Yelp Datasets i.e business, checkin, user, review, tip and photos data. We extract these files into respective `raw_tables` using the script below.
+There are six `.json` files in Yelp Datasets i.e business, checkin, user, review, tip and photos data. We extract these files into respective `raw_tables` using the script below.
 
 ## 1. [extract_raw_from_json.py](../src/pipeline/extract_raw_from_json.py) :
 
@@ -171,14 +171,14 @@ Now count number of rows from json file to estimate time to extract.
                 execute_batch(cur, extract_query, filtered_data)
                 con.commit()
 ```
-Here I first checked if table_name if `raw_business` because it contained nested json. So, I extracted it using temporary table and mapping it to raw table using shell command of postgres i.e `psql`.
+Here I first checked if table_name is `raw_business` because it contained nested json. So, I extracted it using temporary table and mapping it to raw table using shell command of postgres i.e `psql`.
 
-Then I extracted other files to correct raw_tables by reading the content of lines and batch ineserting it using `execute_batch`. 
+Then I extracted other files to correct raw_tables by reading the content of json and batch ineserting it using `execute_batch`. 
 
 
 #### iii. Function call with correct parameters:
 
-Finally we call this funcion providing the correct `table_name`, `json file_path` and `sql query_path` to execute. 
+Finally we call this function providing the correct `table_name`, `json file_path` and `sql query_path` to execute. 
 
 
 ```
@@ -192,7 +192,7 @@ And the json data was extracted to respective `raw_tables` !
 The `query_path` is respective sql file path listed under [../src/sql/queries/](../src/sql/queries/) folder. 
 
 
-**The console output after running the extracting seems like this:**
+**The console output after running the extraction seems like this:**
 <img src = './images/extraction.png'>
 
 
@@ -217,7 +217,7 @@ Here `time` library helps us to calculate the elapsed time for each transformati
 
 #### ii. Function Defination 
 I defined the `transform_raw_tables(transform_procedure):` function which takes `transform_procedure` as argument.
-* `transform_procedure `: Sql file path to execure stored transform procedure. 
+* `transform_procedure `: Sql file path to execute stored transform procedure. 
 
 ```
        def transform_raw_tables(transform_procedure):
@@ -250,7 +250,7 @@ Then `time` library helps to calculate elapsed time of execution of this sql que
         print(f'{FAILURE}[-] Exception Occured:{END}',e)
 
 ```
-Since the stored procedure queries are provided as `transform_procedure` file path, it executes and helps to transform raw data into respective standart tables. 
+Since the stored procedure queries are provided as `transform_procedure` file path, it executes and helps to transform raw tables into respective standard tables. 
 
 
 #### iii. Function call with correct parameters:
@@ -269,7 +269,7 @@ And the raw_tables ares now extracted to `std_tables`!
 The `transform_procedure` is respective sql file path listed under [../src/sql/procedures/](../src/sql/procedures/) folder. 
 
 
-**The console output after running the extracting seems like this:**
+**The console output after running the transformation seems like this:**
 <img src = './images/transformation.png'>
 
 
@@ -295,7 +295,7 @@ Here `time` library helps us to calculate the elapsed time for each transformati
 
 #### ii. Function Defination 
 I defined the `def load_tables(load_procedure):` function which takes `load_procedure` as argument.
-* `load_procedure `: Sql file path to execure stored load procedure. 
+* `load_procedure `: Sql file path to execute stored load procedure. 
 
 ```
        def load_tables(load_procedure):
@@ -328,12 +328,12 @@ Then `time` library helps to calculate elapsed time of execution of this sql que
         print(f'{FAILURE}[-] Exception Occured:{END}',e)
 
 ```
-Since the stored procedure queries are provided as `load_procedure` file path, it executes and helps to transform stamdard tables into respective fact and dimension tables. 
+Since the stored procedure queries are provided as `load_procedure` file path, it executes and helps to transform standard tables into respective fact and dimension tables. 
 
 
 #### iii. Function call with correct parameters:
 
-Finally we call this funcion providing the correct `load_procedure` file path. 
+Finally we call this function providing the correct `load_procedure` file path. 
 
 ```
 if __name__ == '__main__':
@@ -342,12 +342,12 @@ if __name__ == '__main__':
     load_tables('../sql/procedures/load_dim_elite_years.sql')
     ...
 ```
-And the raw_tables ares now extracted to correct `fact_tables` and `dim_tables`!
+And the std_tables ares now extracted to correct `fact_tables` and `dim_tables`!
 
 The `load_procedure` is respective sql file path listed under [../src/sql/procedures/](../src/sql/procedures/) folder. 
 
 
-**The console output after running the extracting seems like this:**
+**The console output after running the load seems like this:**
 <img src = './images/load.png'>
 
 
@@ -356,18 +356,6 @@ The `load_procedure` is respective sql file path listed under [../src/sql/proced
 ## Data Validations: 
 
 **1.Check if business has no category**
-```
-SELECT COUNT(*) as total_impacted_count,
-	CASE WHEN COUNT(*)> 0 then 'failed'
-	   ELSE 'passed'
-	   END as test_status
-FROM std_business 
-WHERE categories ='{}'
-```
-<img src='./images/validation1.png'>
-
-
-**1. Check if business has no category**
 ```
 SELECT COUNT(*) as total_impacted_count,
 	CASE WHEN COUNT(*)> 0 then 'failed'

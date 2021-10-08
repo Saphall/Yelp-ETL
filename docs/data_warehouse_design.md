@@ -18,12 +18,11 @@ According to the requirements and dataset, the dimension and fact table can be:
 *  **dim_business_categories**  - business_id , category_id
 *  **dim_photos** - photo_id  ,business_id ,caption ,label 	
 *  **dim_elite_years** - user_id ,elite_year
-*  **dim_** - paycode_id, paycode
 
 > ### Identifying Fact Tables:
 * **fact_business** : This table contains the data related to business and its attributes.
 * **fact_checkin** : This table contains info about the checkin date for business.
-* **fact_review** : This table contains the data related to review given by user on different businesses.
+* **fact_review** : This table contains the data related to review given by user on different business.
 * **fact_tip** : This table contains info about the tip provided by user to business.
 * **fact_user** : This table contains the data related to user and their attributes.
 
@@ -61,5 +60,5 @@ The description of Entities, Attributes and their domain:
 
 ## Physical Modeling:
 
-In physical modeling the facts and dimensions are implemented. The physical model implementd using Logical modeling are listed in [../schema/](../schema) folder. 
+In physical modeling the facts and dimensions are implemented. The physical model implemented after Logical modeling are listed in [../schema/](../schema) folder. 
 

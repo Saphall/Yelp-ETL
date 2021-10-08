@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS raw_business (
     stars VARCHAR(500),
     review_count VARCHAR(500),
     is_open VARCHAR(500),
-    attributes TEXT,
+    attributes jsonb,
     categories TEXT,
-    hours TEXT
+    hours jsonb
 );
