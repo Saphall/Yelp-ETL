@@ -34,13 +34,11 @@ The [Yelp Dataset](https://www.yelp.com/dataset/documentation) is subset of Yelp
 <img src = './docs/images/Yelp-ETL-model.png'>
 
 This is the target model to achieve using the dataset.
-> **The complete Data warehouse design is explained in [docs/data_warehouse_desing.md](./docs/data_warehouse_design.md) file.**
 
 ### ETL: 
 * **Extract** : The Extraction process is done using the [extract_raw_from_json.py](./src/pipeline/extract_raw_from_json.py) script.
 * **Transform** : The Transformation process is done using the [transformation.py](./src/pipeline/transformation.py) script.
 * **Load** : The Load process is done using the [load.py](./src/pipeline/load.py) script.
-> **The complete ETL process is explained in [docs/etl_documentation_file]() file.**
 
 The [main.py](./src/pipeline/main.py) file helps to carry out this process according to our choice.
 
@@ -48,4 +46,5 @@ The [main.py](./src/pipeline/main.py) file helps to carry out this process accor
 
 ### Visualization :
 The visualization for the data analysis and insights was done using **MicrosoftPowerBI**. 
-The visualization is explained in [docs/data_visualization.md](./docs/data_visualization.md) file.
+
+> #### **The complete documentation is in [docs/](./docs) folder.**  
