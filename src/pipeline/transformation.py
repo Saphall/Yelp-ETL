@@ -1,3 +1,4 @@
+import subprocess
 import time 
 from utils.utils import *
 from utils.database_connection import *
@@ -21,17 +22,18 @@ def transform_raw_tables(transform_procedure):
         con.commit()
         print(f'[{SUCCESS}INFO{END}] {BOLD}Transformation Successful!{END}')
         print(f'{SUCCESS}[+] Elapsed Time: {(time.time() - start_time):.4f} seconds.{END}')
+        subprocess.run('python validation.py',shell=True)
     except Exception as e:
         print(f'{FAILURE}[-] Exception Occured:{END}',e)
 
 
 
 if __name__ == '__main__':
-    transform_raw_tables('../sql/procedures/transform_std_business.sql')
+    # transform_raw_tables('../sql/procedures/transform_std_business.sql')
     transform_raw_tables('../sql/procedures/transform_std_photos.sql')
-    transform_raw_tables('../sql/procedures/transform_std_user.sql')
-    transform_raw_tables('../sql/procedures/transform_std_checkin.sql')
-    transform_raw_tables('../sql/procedures/transform_std_tip.sql')
-    transform_raw_tables('../sql/procedures/transform_std_review.sql')
+    # transform_raw_tables('../sql/procedures/transform_std_user.sql')
+    # transform_raw_tables('../sql/procedures/transform_std_checkin.sql')
+    # transform_raw_tables('../sql/procedures/transform_std_tip.sql')
+    # transform_raw_tables('../sql/procedures/transform_std_review.sql')
    
     databaseDisconnect(con,cur)

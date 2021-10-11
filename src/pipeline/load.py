@@ -1,5 +1,6 @@
 import time 
 from utils.utils import *
+import validation
 from utils.database_connection import *
 from utils.file_content_toString import *
 
@@ -27,15 +28,15 @@ def load_tables(load_procedure):
 
 
 if __name__ == '__main__':
-    load_tables('../sql/procedures/load_fact_business.sql')
-    load_tables('../sql/procedures/load_fact_user.sql')
-    load_tables('../sql/procedures/load_dim_elite_years.sql')
+    # load_tables('../sql/procedures/load_dim_location.sql')
+    # load_tables('../sql/procedures/load_dim_categories.sql')
+    # load_tables('../sql/procedures/load_dim_business_categories.sql')
+    # load_tables('../sql/procedures/load_fact_business.sql')
     load_tables('../sql/procedures/load_dim_photos.sql')
-    load_tables('../sql/procedures/load_dim_categories.sql')
-    load_tables('../sql/procedures/load_dim_business_categories.sql')
-    load_tables('../sql/procedures/load_dim_location.sql')
-    load_tables('../sql/procedures/load_fact_checkin.sql')
-    load_tables('../sql/procedures/load_fact_tip.sql')
-    load_tables('../sql/procedures/load_fact_review.sql')
+    # load_tables('../sql/procedures/load_dim_elite_years.sql')
+    # load_tables('../sql/procedures/load_fact_user.sql')
+    # load_tables('../sql/procedures/load_fact_checkin.sql')
+    # load_tables('../sql/procedures/load_fact_tip.sql')
+    # load_tables('../sql/procedures/load_fact_review.sql')
     
     databaseDisconnect(con,cur)
