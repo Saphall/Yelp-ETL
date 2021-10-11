@@ -1,4 +1,3 @@
-json
 psycopg2
-alive_bar
+alive-progress
 python-dotenv
