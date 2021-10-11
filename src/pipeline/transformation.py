@@ -29,11 +29,11 @@ def transform_raw_tables(transform_procedure):
 
 
 if __name__ == '__main__':
-    # transform_raw_tables('../sql/procedures/transform_std_business.sql')
+    transform_raw_tables('../sql/procedures/transform_std_business.sql')
     transform_raw_tables('../sql/procedures/transform_std_photos.sql')
-    # transform_raw_tables('../sql/procedures/transform_std_user.sql')
-    # transform_raw_tables('../sql/procedures/transform_std_checkin.sql')
-    # transform_raw_tables('../sql/procedures/transform_std_tip.sql')
-    # transform_raw_tables('../sql/procedures/transform_std_review.sql')
+    transform_raw_tables('../sql/procedures/transform_std_user.sql')
+    transform_raw_tables('../sql/procedures/transform_std_checkin.sql')
+    transform_raw_tables('../sql/procedures/transform_std_tip.sql')
+    transform_raw_tables('../sql/procedures/transform_std_review.sql')
    
     databaseDisconnect(con,cur)

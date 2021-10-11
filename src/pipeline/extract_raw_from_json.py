@@ -80,9 +80,9 @@ def extract_raw_from_json(table_name, file_path, query_path):
 
 
 if __name__ == '__main__':
-    # extract_raw_from_json('raw_checkin', '../../data/checkin.json','../sql/queries/extract_raw_checkin.sql')
-    # extract_raw_from_json('raw_business', '../../data/business.json','../sql/queries/extract_raw_business.sql')
+    extract_raw_from_json('raw_checkin', '../../data/checkin.json','../sql/queries/extract_raw_checkin.sql')
+    extract_raw_from_json('raw_business', '../../data/business.json','../sql/queries/extract_raw_business.sql')
     extract_raw_from_json('raw_photos', '../../data/photos.json','../sql/queries/extract_raw_photos.sql')
-    # extract_raw_from_json('raw_tip', '../../data/tip.json','../sql/queries/extract_raw_tip.sql')
-    # extract_raw_from_json('raw_user', '../../data/user.json','../sql/queries/extract_raw_user.sql')
-    # extract_raw_from_json('raw_review', '../../data/review.json','../sql/queries/extract_raw_review.sql')
+    extract_raw_from_json('raw_tip', '../../data/tip.json','../sql/queries/extract_raw_tip.sql')
+    extract_raw_from_json('raw_user', '../../data/user.json','../sql/queries/extract_raw_user.sql')
+    extract_raw_from_json('raw_review', '../../data/review.json','../sql/queries/extract_raw_review.sql')

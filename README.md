@@ -40,7 +40,7 @@ This is the target model to achieve using the dataset.
 * **Transform** : The Transformation process is done using the [transformation.py](./src/pipeline/transformation.py) script.
 * **Load** : The Load process is done using the [load.py](./src/pipeline/load.py) script.
 
-The [main.py](./src/pipeline/main.py) file helps to carry out this process according to our choice.
+The [main.py](./src/pipeline/main.py) file helps to carry out this process according to our choice. e.g.
 
 <img src = './docs/images/direct_etl.png' widht = '30%'>
 
