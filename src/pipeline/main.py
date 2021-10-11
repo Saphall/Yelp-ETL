@@ -63,7 +63,7 @@ def main():
         # print(execution_time)
         execute_etl(split_user_input[0],execution_time)
         user_input = split_user_input[0]
-        print(user_input)
+        # print(user_input)
     except:
         if user_input == '1':
             subprocess.run(f'{extract}',shell=True)
