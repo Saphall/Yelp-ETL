@@ -57,13 +57,13 @@ def main():
     ''')
     user_input = input('>> ')
     split_user_input = user_input.split(' ')
-    print()
-    
+        
     try:
         execution_time = split_user_input[2]+' '+split_user_input[3]
         # print(execution_time)
         execute_etl(split_user_input[0],execution_time)
         user_input = split_user_input[0]
+        print(user_input)
     except:
         if user_input == '1':
             subprocess.run(f'{extract}',shell=True)
